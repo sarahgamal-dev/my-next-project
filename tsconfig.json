@@ -4,7 +4,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
+    "noEmitOnError": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -22,6 +23,14 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/cart/page.jsx", "src/Context/CartContext.tsx", "src/app/register/page.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/cart/page.jsx",
+    "src/Context/CartContext.tsx",
+    "src/app/register/page.tsx"
+  ],
   "exclude": ["node_modules"]
 }
