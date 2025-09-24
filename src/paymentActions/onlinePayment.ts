@@ -1,8 +1,8 @@
-// paymentActions/onlinePaymentClient.ts
+
 import axios from "axios";
 import { getMytoken } from "@/utilities/token";
 
-export async function onlinePaymentClient(id: string, values: object) {
+export async function onlinePaymentAction(id: string, values: object) {
   const token = await getMytoken();
 
   if (!token) throw new Error("Login First");

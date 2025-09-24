@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cartContext } from "@/Context/CartContext";
 import { cashPaymentAction } from "@/paymentActions/Cashpayment";
-import { onlinePaymentClient } from "@/paymentActions/onlinePaymentClient";
+
 import React, { useContext, useRef } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { onlinePaymentAction } from "@/paymentActions/onlinePayment";
 
 const Payment = () => {
   const router = useRouter();
@@ -55,7 +56,7 @@ const Payment = () => {
     };
 
     try {
-      const data = await onlinePaymentClient(cartId, values);
+      const data = await onlinePaymentAction(cartId, values);
       console.log(data);
 
       if (data.status === "success" && data.session?.url) {
