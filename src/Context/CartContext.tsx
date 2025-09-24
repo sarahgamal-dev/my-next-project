@@ -31,7 +31,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       const data = await AddtoCart(id)
 
-      // ✅ تحديث القيم فورًا بعد إضافة المنتج
+      
       setNumOfCart(data.numOfCart)
       setProducts(data.data.products)
       setTotalCartPrice(data.data.totalCartPrice)

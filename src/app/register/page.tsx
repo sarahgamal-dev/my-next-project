@@ -7,13 +7,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import axios from 'axios'
  import React from 'react'
 import {  useForm } from 'react-hook-form'
-import async from './../../apis/Allproducts';
-import { success } from './../../../node_modules/zod/v4/classic/schemas';
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 
 
-const register = () => {
+const Register = () => {
 
 
   const router = useRouter()
@@ -50,14 +48,10 @@ async function handleRegister(values: registerschemaType) {
 
     router.push("/login")
 
-  } catch (error: any) {
-    console.log("❌ error:", error.response?.data);
+  } catch (error) {
+    console.log(" error");
 
 
-        toast.success(error.response.data.message,{
-      position:'top-center',
-      duration:3000
-    })
   }
 }
 
@@ -165,4 +159,4 @@ async function handleRegister(values: registerschemaType) {
   )
 }
 
-export default register
+export default Register

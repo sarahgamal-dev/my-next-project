@@ -1,7 +1,7 @@
 "use client"
 import { cartContext } from '@/Context/CartContext'
 import React, { useContext } from 'react'
-import Loading from './../loading';
+import Loading from '../loading';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link'
@@ -10,7 +10,7 @@ import { toast } from 'sonner';
 const Cart = () => {
   const { isLoading, products, totalCartPrice , removeItem , updateCart , clearCart } = useContext(cartContext)
 
-  async function removecart(id: string) {
+  async function removecart(id) {
     try {
       const data = await removeItem(id)
 
@@ -24,7 +24,7 @@ const Cart = () => {
     }
   }
 
-  async function handleUpdate(id: string, newCount: number) {
+  async function handleUpdate(id, newCount) {
     if (newCount < 1) {
       toast.error("Quantity cannot be less than 1", { duration: 1000, position: "top-center" })
       return
@@ -69,7 +69,7 @@ const Cart = () => {
         </Button>
 
         <div className='Allproducts'>
-          {products.map((product: any, idx: number) => (
+          {products.map((product, idx) => (
             <div
               key={idx}
               className='flex items-center justify-between py-3 border-b-[1px] border-green-700/35'

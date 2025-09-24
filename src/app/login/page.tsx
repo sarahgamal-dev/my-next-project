@@ -14,7 +14,7 @@ import { loginschema, LoginschemaType } from '@/schema/login.schema'
 import {signIn} from "next-auth/react"
 
 
-const login = () => {
+const Login = () => {
 
 
   const router = useRouter()
@@ -151,4 +151,4 @@ async function handleLogin(values: LoginschemaType) {
   )
 }
 
-export default login
+export default Login
